@@ -26,3 +26,7 @@ $ dotnet watch run
 ## Challenge
 
 See [CHALLENGE.md](./CHALLENGE.md)
+
+## Solution
+
+See [solution.md](./solution.md)
