@@ -13,9 +13,9 @@
             Stats for <a href="@Model.Url.ShortUrl">@Model.Url.ShortUrl</a>
           </h4>
         </li>
-        <li class="collection-item">Created May 22, 2021</li>
+        <li class="collection-item">Created @Model.Url.DateCreation.ToString("MMM dd, yyyy")</li>
         <li class="collection-item">
-          Original URL: https://drive.google.com/file/d/1VdLgSSMojWFb1GRoBAFX_eXy7oX2J
+          Original URL: @Model.Url.OriginalUrl
         </li>
       </ul>
     </div>
@@ -67,7 +67,7 @@
     function drawBrowsersChart() {
       var data = google.visualization.arrayToDataTable([
         ['browser', 'clicks'],
-      ].concat(@Json.Serialize(Model.DailyClicks.Select(e => new object[] { e.Key, e.Value }))));
+      ].concat(@Json.Serialize(Model.BrowseClicks.Select(e => new object[] { e.Key, e.Value }))));
       var options = {
         title: 'Browsers'
       };
